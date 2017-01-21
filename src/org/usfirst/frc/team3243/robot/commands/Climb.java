@@ -1,16 +1,12 @@
-
 package org.usfirst.frc.team3243.robot.commands;
-
-import edu.wpi.first.wpilibj.command.Command;
 
 import org.usfirst.frc.team3243.robot.Robot;
 
-/**
- *
- */
-public class ExampleCommand extends Command {
+import edu.wpi.first.wpilibj.command.Command;
 
-    public ExampleCommand() {
+public class Climb extends Command{
+	
+	public Climb() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.exampleSubsystem);
     }
@@ -36,4 +32,5 @@ public class ExampleCommand extends Command {
     // subsystems is scheduled to run
     protected void interrupted() {
     }
+
 }
