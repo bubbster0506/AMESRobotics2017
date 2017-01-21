@@ -8,7 +8,8 @@ public class Motor extends Command{
 
 	public Motor() {
         // Use requires() here to declare subsystem dependencies
-        requires(Robot.exampleSubsystem);
+        requires(Robot.drive);
+        requires(Robot.autodrive);
     }
 
     // Called just before this Command runs the first time

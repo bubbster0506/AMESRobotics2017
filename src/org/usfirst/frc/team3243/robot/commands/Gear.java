@@ -8,7 +8,8 @@ public class Gear extends Command{
 
 	public Gear() {
         // Use requires() here to declare subsystem dependencies
-        requires(Robot.exampleSubsystem);
+        requires(Robot.game);
+        requires(Robot.autofunc);
     }
 
     // Called just before this Command runs the first time
