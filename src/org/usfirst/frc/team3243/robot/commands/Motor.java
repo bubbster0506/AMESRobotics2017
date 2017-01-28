@@ -5,11 +5,12 @@ import org.usfirst.frc.team3243.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class Motor extends Command{
-
+	
 	public Motor() {
         // Use requires() here to declare subsystem dependencies
         requires(Robot.drive);
         requires(Robot.autodrive);
+        requires(Drive);
     }
 
     // Called just before this Command runs the first time
@@ -18,6 +19,7 @@ public class Motor extends Command{
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Drive.tankDrive(OI.)
     }
 
     // Make this return true when this Command no longer needs to run execute()
