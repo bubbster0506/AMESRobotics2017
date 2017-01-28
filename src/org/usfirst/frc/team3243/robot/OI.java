@@ -3,6 +3,10 @@ package org.usfirst.frc.team3243.robot;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.Button;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -12,13 +16,17 @@ public class OI {
 	
 	Joystick move = new Joystick(0);
 	Double[] drive = new Double[2];
-	Button turbo = new JoystickButton(move, 0);
-	Button opp = new JoystickButton(move, 1);
-
+	boolean opp= false;
+	Double modifier = 0.5;
+	
 	public Double[] getDrive(){
+		//This is for the button values
+		button2.whenPressed(modifier = -modifier);
+		button10.whilePressed(modifier = 1.0);
+		
 		//This is for the Joystick Control
-		drive[0] = move.getRawAxis(0);
-		drive[1] = move.getRawAxis(3);
+		drive[0] = modifier*move.getRawAxis(0);
+		drive[1] = modifier*move.getRawAxis(3);
 		
 		return drive;
 	}
