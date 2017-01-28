@@ -1,8 +1,8 @@
-package org.usfirst.frc.team3243.robot.subsystems;
+package org.usfirst.frc.team3243.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 
-public class Gear extends Subsystem{
+public class Motors extends Subsystem{
 
 	@Override
 	protected void initDefaultCommand() {

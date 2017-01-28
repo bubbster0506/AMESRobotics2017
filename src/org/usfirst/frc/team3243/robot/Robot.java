@@ -19,10 +19,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
 
-	public static final AutoDrive autodrive = new AutoDrive();
-	public static final AutoFunctions autofunc = new AutoFunctions();
 	public static final Drive drive = new Drive();
 	public static final Game game = new Game();
+	public static final Auto auto = new Auto();
 	public static OI oi;
 
     Command autonomousCommand;
