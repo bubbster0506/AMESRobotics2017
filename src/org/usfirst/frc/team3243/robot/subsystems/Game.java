@@ -1,37 +1,15 @@
 package org.usfirst.frc.team3243.robot.subsystems;
 
-import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.command.Subsystem;
 
-public class Game extends Command{
+public class Game extends Subsystem{
 
 	@Override
-	protected void initialize() {
+	protected void initDefaultCommand() {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
-	protected void execute() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected boolean isFinished() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	protected void end() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	protected void interrupted() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 }
