@@ -18,10 +18,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * directory.
  */
 public class Robot extends IterativeRobot {
-
-	public static final Drive drive = new Drive();
-	public static final Game game = new Game();
-	public static final Auto auto = new Auto();
+	
+	public static Chassis chassis = new Chassis();
 	public static OI oi;
 
     Command autonomousCommand;

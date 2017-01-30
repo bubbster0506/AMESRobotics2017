@@ -1,8 +1,10 @@
 package org.usfirst.frc.team3243.robot;
 
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Trigger;
+import edu.wpi.first.wpilibj.command.Command;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -11,21 +13,38 @@ import edu.wpi.first.wpilibj.buttons.Trigger;
 public class OI {
 	
 	Joystick move = new Joystick(0);
-	Double[] drive = new Double[2];
-	boolean opp= false;
-	Double modifier = 0.5;
+	Button turbo = new JoystickButton(move, 8);
+	Button backwards = new JoystickButton(move, 9);
+	Double modify;
 	
-	public Double[] getDrive(){
-		//This is for the button values
-		button2.whenPressed(modifier = -modifier);
-		button10.whilePressed(modifier = 1.0);
+	public static Double left;
+	public static Double right;
+	
+	public void getDrvVals(){
 		
-		//This is for the Joystick Control
-		drive[0] = modifier*move.getRawAxis(0);
-		drive[1] = modifier*move.getRawAxis(3);
+		modify = .5;
 		
-		return drive;
+		left = move.getRawAxis(0);
+		right = move.getRawAxis(2);
+		
+		turbo.whenPressed(turbo());
+		backwards.whenPressed(back());
+		
+		right = right*modify;
+		left = left*modify;
+		}
+	public Command turbo(){
+		modify = 1.0;
+		return null;
 	}
+	
+	public Command back(){
+		modify = modify*-1;
+		return null;
+	
+	}
+	
+	
 	
     //// CREATING BUTTONS
     // One type of button is a joystick button which is any button on a joystick.
