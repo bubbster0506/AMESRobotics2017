@@ -13,8 +13,8 @@ import edu.wpi.first.wpilibj.command.Command;
 public class OI {
 	
 	Joystick move = new Joystick(0);
-	Button turbo = new JoystickButton(move, 8);
-	Button backwards = new JoystickButton(move, 9);
+	Button turbo = new JoystickButton(move, 8);//RT
+	Button backwards = new JoystickButton(move, 9);//Back
 	Double modify;
 	
 	public static Double left;
