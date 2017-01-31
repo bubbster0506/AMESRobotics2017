@@ -23,6 +23,13 @@ public class Chassis extends Subsystem {
     	TL.set(OI.left);
     	BL.set(OI.left);
     }
+	
+    public void stop() {
+	TR.set(0);
+    	BR.set(0);
+    	TL.set(0);
+    	BL.set(0);     
+    }
     
     public void autoDrive(){
     	
