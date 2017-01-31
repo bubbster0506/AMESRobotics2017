@@ -30,8 +30,10 @@ public class OI {
 		turbo.whenPressed(turbo());
 		backwards.whenPressed(back());
 		
-		right = right*modify;
-		left = left*modify;
+		Double r = right;
+		Double l = left;
+		right = l*modify;
+		left = r*modify;
 		}
 	public Command turbo(){
 		modify = 1.0;
