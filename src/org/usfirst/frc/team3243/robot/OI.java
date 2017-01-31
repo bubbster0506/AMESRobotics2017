@@ -14,8 +14,10 @@ public class OI {
 	
 	Joystick move = new Joystick(0);
 	Button turbo = new JoystickButton(move, 8);//RT
+	Button crawl = new JoystickButton(move, 7);//LT
 	Button backwards = new JoystickButton(move, 9);//Back
 	Double modify;
+	boolean reversed;
 	
 	public static Double left;
 	public static Double right;
@@ -23,25 +25,42 @@ public class OI {
 	public void getDrvVals(){
 		
 		modify = .5;
+		reversed = false;
 		
 		left = move.getRawAxis(0);
 		right = move.getRawAxis(2);
 		
 		turbo.whenPressed(turbo());
+		crawl.whenPressed(crawl());
 		backwards.whenPressed(back());
 		
-		Double r = right;
-		Double l = left;
-		right = l*modify;
-		left = r*modify;
+		Double r;
+		Double l;
+		if(reversed)
+		{
+			r = left;
+			l = right;
+		}else
+		{
+			r = right;
+			l = left;
+		}
+		right = r*modify;
+		left = l*modify;
 		}
 	public Command turbo(){
 		modify = 1.0;
 		return null;
 	}
 	
+	public Command crawl(){
+		modify = 0.25;
+		return null;
+	}
+	
 	public Command back(){
 		modify = modify*-1;
+		reversed = true;
 		return null;
 	
 	}
