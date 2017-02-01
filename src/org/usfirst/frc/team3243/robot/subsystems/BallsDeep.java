@@ -11,11 +11,17 @@ public class BallsDeep extends Subsystem {
   Victor collect = new Victor(4);
   Victor dump = new Victor(5);
   
-  public void collect() {
-    	collector.set();
-    }
-    
-  public void dumper() {
-      dump.set();
-    }
+	public void collectOn() {
+    	collect.set(OI.collectPower);
+	}
+	
+	public void dumperOn() {
+		dump.set(1.0);
+	}
+
+	@Override
+	protected void initDefaultCommand() {
+		// TODO Auto-generated method stub
+		
+	}
 }

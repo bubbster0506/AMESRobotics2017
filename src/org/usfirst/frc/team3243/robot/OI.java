@@ -65,16 +65,15 @@ public class OI {
 	
 	}
 	
-	public static Double collectPower = 0.0;
-	//change button value
 	Button collectButton = new JoystickButton(move, 6);
+	public static Double collectPower = 0.0;
 	
 	public void collectInput(){
-		collectButton.whileHeld(powerBelt);
+		collectButton.whileHeld(powerBelt());
 		}
 	
 	public Command powerBelt(){
-		collectPower = 0.5;
+		collectPower = 1.0;
 		return null;
 		}
 	
