@@ -65,9 +65,20 @@ public class OI {
 	
 	}
 	
+	public static Double collectPower = 0.0;
+	//change button value
+	Button collectButton = new JoystickButton(move, 6);
 	
+	public void collectInput(){
+		collectButton.whileHeld(powerBelt);
+		}
 	
-    //// CREATING BUTTONS
+	public Command powerBelt(){
+		collectPower = 0.5;
+		return null;
+		}
+	
+    //// CREATING BUTT0NS
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
     // number it is.
