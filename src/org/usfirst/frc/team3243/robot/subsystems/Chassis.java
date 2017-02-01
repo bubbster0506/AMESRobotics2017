@@ -25,7 +25,8 @@ public class Chassis extends Subsystem {
     }
 	
     public void stop() {
-	TR.set(0);
+    	//this isn't needed as if there is no joystick input the robot won't move
+    	TR.set(0);
     	BR.set(0);
     	TL.set(0);
     	BL.set(0);     

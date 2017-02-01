@@ -16,6 +16,8 @@ public class OI {
 	Button turbo = new JoystickButton(move, 8);//RT
 	Button crawl = new JoystickButton(move, 7);//LT
 	Button backwards = new JoystickButton(move, 9);//Back
+	Button collectButton = new JoystickButton(move, 6);
+	public static Double collectPower = 0.0;
 	Double modify;
 	boolean reversed;
 	
@@ -34,19 +36,10 @@ public class OI {
 		crawl.whenPressed(crawl());
 		backwards.whenPressed(back());
 		
-		Double r;
-		Double l;
-		if(reversed)
-		{
-			r = left;
-			l = right;
-		}else
-		{
-			r = right;
-			l = left;
-		}
-		right = r*modify;
-		left = l*modify;
+		right = right*modify;
+		left = left*modify;
+		
+		//the stuff added here was not required for driving the robot
 		}
 	public Command turbo(){
 		modify = 1.0;
@@ -54,6 +47,7 @@ public class OI {
 	}
 	
 	public Command crawl(){
+		//may not be needed but will be up to change when drive team gets the bot
 		modify = 0.25;
 		return null;
 	}
@@ -64,9 +58,6 @@ public class OI {
 		return null;
 	
 	}
-	
-	Button collectButton = new JoystickButton(move, 6);
-	public static Double collectPower = 0.0;
 	
 	public void collectInput(){
 		collectButton.whileHeld(powerBelt());
