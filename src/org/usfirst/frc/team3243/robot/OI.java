@@ -16,7 +16,7 @@ public class OI {
 	Button turbo = new JoystickButton(move, 8);//RT
 	Button crawl = new JoystickButton(move, 7);//LT
 	Button backwards = new JoystickButton(move, 9);//Back
-	Button collectButton = new JoystickButton(move, 6);
+	Button collectButton = new JoystickButton(move, 6);//RB
 	public static Double collectPower = 0.0;
 	Double modify;
 	boolean reversed;
